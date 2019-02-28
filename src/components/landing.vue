@@ -5,7 +5,7 @@
       <img src="@/assets/goldflourish.png" class="flipped"> 
           <!-- Note we're flipping this with CSS  so we don't have to load an extra asset! -->
       <img src="@/assets/goldshortlogo.png">
-      <img src="@/assets/goldflourish.png">
+      <img src="@/assets/goldflourish.png" class="desktop-only">
       <br>
       <img src="@/assets/goldlonglogo.png" id="short-logo">
     </div>
@@ -17,29 +17,78 @@
 
     <!-- Art, absolutely positioned: -->
     <img src="@/assets/landing_assets/foreground_cliff.svg" id="foreground-cliff"
+      :style="{
+          'margin-bottom': -(scrollPos / 85) - (mouseY / 55) + 'px',
+          'margin-left': (mouseX / 55) - 50 + 'px'
+        }"
       class="desert-asset">
     <img src="@/assets/landing_assets/cowboy.svg" id="cowboy"
+      :style="{
+          'margin-bottom': -(scrollPos / 55) - (mouseY / 55) + 'px',
+          'margin-left': (mouseX / 55) + 'px'
+        }"
       class="desert-asset">
 
     <img src="@/assets/landing_assets/midground_1.svg" id="midground-1"
+      :style="{
+          'margin-bottom': -(scrollPos / 50) - (mouseY / 45) + 'px',
+          'margin-right': -(mouseX / 65) + 'px'
+        }"
       class="desert-asset">
     <img src="@/assets/landing_assets/midground_2.svg" id="midground-2"
+      :style="{
+          'margin-bottom': -(scrollPos / 25) + 'px',
+          'margin-right': -(mouseX / 85) + 'px'
+        }"
       class="desert-asset">
     <img src="@/assets/landing_assets/midground_3.svg" id="midground-3"
+    :style="{
+          'margin-bottom': -(scrollPos / 15) + 'px',
+          'margin-right': (mouseX / 85) - 40 + 'px'
+        }"
       class="desert-asset">
 
     <img src="@/assets/landing_assets/background_mesa.svg" id="mesa"
+      :style="{
+          'margin-bottom': -(scrollPos / 10) + 'px',
+          'margin-right': (mouseX / 75) + 'px'
+        }"
       class="desert-asset">
     <img src="@/assets/landing_assets/background_mountains.svg" id="mountains"
+      :style="{
+          'margin-bottom': -(scrollPos / 7) + 'px',
+          'margin-right': (mouseX / 65) - 60 + 'px'
+        }"
       class="desert-asset">
 
   </div>
 </template>
 
 <script>
+
 export default {
+  name: 'landing',
+  data() {
+    return {
+      scrollPos: 0,
+      mouseX: 0,
+      mouseY: 0
+    }
+  },
   mounted() {
+    console.log("hi")
+    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
+    document.onmousemove = this.handleMouseMove;
+  },
+  methods: {
+    handleScroll() {
+      this.scrollPos = window.scrollY;
+    },
+    handleMouseMove(e) {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+    }
   }
 }
 </script>
@@ -48,6 +97,7 @@ export default {
 @import '@/globalVars.scss';
 
 #landing-container {
+  
   min-height: 100vh;
   overflow: hidden;
   padding: 0px;
@@ -66,11 +116,17 @@ export default {
   img {
     height: 70%;
     padding: 0px 10px;
+    @media only screen and (max-width: 560px) {
+      height: 40%;
+    }
   }
   #short-logo {
     margin-top: 20px;
     width: 25vw;
     height: auto;
+    @media only screen and (max-width: 560px) {
+      width: 50vw;
+    }
   }
 }
 
@@ -150,13 +206,3 @@ export default {
     }
   }
 </style>
-
-<script>
-export default {
-  name: 'Main',
-  data() {
-    return {
-    };
-  },
-};
-</script>

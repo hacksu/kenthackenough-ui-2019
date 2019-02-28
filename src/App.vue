@@ -38,4 +38,9 @@ h1 {
 .flipped {
   transform: scaleX(-1);
 }
+.desktop-only {
+  @media only screen and (max-width: 560px) {
+    display: none;
+  }
+}
 </style>
