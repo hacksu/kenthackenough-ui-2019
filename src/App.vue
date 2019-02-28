@@ -12,6 +12,10 @@
   font-family: nandaka;
   src: url("./assets/fonts/nandaka_western.ttf");
 }
+@font-face {
+  font-family: athelas;
+  src: url("./assets/fonts/Athelas-Regular.ttf");
+}
 
 h1 {
   font-family: nandaka;

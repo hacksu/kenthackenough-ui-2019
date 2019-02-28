@@ -1,12 +1,18 @@
 <template>
   <div id="landing-container">
+
     <div id="logo-container">
       <img src="@/assets/goldflourish.png" class="flipped"> 
           <!-- Note we're flipping this with CSS  so we don't have to load an extra asset! -->
       <img src="@/assets/goldshortlogo.png">
       <img src="@/assets/goldflourish.png">
       <br>
-      <h1>KENT HACK ENOUGH</h1>
+      <img src="@/assets/goldlonglogo.png" id="short-logo">
+    </div>
+
+    <div id="landing-content-container">
+      <p><b>October 18th - 20th</b></p>
+      <p>Kent State Library</p>
     </div>
 
     <!-- Art, absolutely positioned: -->
@@ -30,18 +36,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+}
+</script>
+
 <style scoped lang="scss">
 @import '@/globalVars.scss';
 
-#logo-container {
-
-  height: 100px;
-  margin-top: 100px;
-  img {
-    height: 100%;
-    padding: 0px 10px;
-  }
-}
 #landing-container {
   min-height: 100vh;
   overflow: hidden;
@@ -52,6 +57,33 @@
   background-size: cover;
   background-color: black;
   position: relative;
+}
+
+#logo-container {
+
+  height: 130px;
+  margin-top: 100px;
+  img {
+    height: 70%;
+    padding: 0px 10px;
+  }
+  #short-logo {
+    margin-top: 20px;
+    width: 25vw;
+    height: auto;
+  }
+}
+
+#landing-content-container {
+  margin-top: 80px;
+  font-size: 2rem;
+  z-index: 11;
+  position: relative;
+  color: $gold;
+  font-family: athelas;
+  p {
+    margin: 10px;
+  }
 }
 
 .desert-asset {
@@ -88,25 +120,25 @@
 }
 #midground-2 {
   right: -30px;
-  bottom: 0px;
+  bottom: -1vw;
   z-index: 8;
   width: 85%;
 }
 #midground-3 {
   right: 0px;
-  bottom: -2vw;
+  bottom: -6vw;
   z-index: 7;
 }
 #mesa {
   width: 30%;
-  bottom: 12vw;
+  bottom: 8vw;
   right: 10%;
   z-index: 6;
 }
 #mountains {
   width: 120%;
   right: -170px;
-  bottom: -10vw;
+  bottom: -16vw;
 }
   
   @keyframes fadein {
