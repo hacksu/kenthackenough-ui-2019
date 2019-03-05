@@ -25,7 +25,7 @@ h1 {
 
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: athelas;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -34,6 +34,7 @@ h1 {
   width: 100%;
   top: 0px;
   left: 0px;
+
 }
 .flipped {
   transform: scaleX(-1);

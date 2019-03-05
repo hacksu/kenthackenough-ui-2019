@@ -15,7 +15,9 @@
       <p>Kent State Library</p>
     </div>
 
-    <!-- Art, absolutely positioned: -->
+    <!-- Art, absolutely positioned.
+        The :style tags used on these assets make the assets shift slightly with the mouse motion
+                                  & the scroll, for a nice parallax effects -->
     <img src="@/assets/landing_assets/foreground_cliff.svg" id="foreground-cliff"
       :style="{
           'margin-bottom': -(scrollPos / 85) - (mouseY / 55) + 'px',
@@ -37,7 +39,7 @@
       class="desert-asset">
     <img src="@/assets/landing_assets/midground_2.svg" id="midground-2"
       :style="{
-          'margin-bottom': -(scrollPos / 25) + 'px',
+          'margin-bottom': -(scrollPos / 25) - (mouseY / 75) + 'px',
           'margin-right': -(mouseX / 85) + 'px'
         }"
       class="desert-asset">
@@ -50,13 +52,13 @@
 
     <img src="@/assets/landing_assets/background_mesa.svg" id="mesa"
       :style="{
-          'margin-bottom': -(scrollPos / 10) + 'px',
+          'margin-bottom': -(scrollPos / 10) + (mouseY / 65) + 'px',
           'margin-right': (mouseX / 75) + 'px'
         }"
       class="desert-asset">
     <img src="@/assets/landing_assets/background_mountains.svg" id="mountains"
       :style="{
-          'margin-bottom': -(scrollPos / 7) + 'px',
+          'margin-bottom': -(scrollPos / 7) + (mouseY / 45) + 'px',
           'margin-right': (mouseX / 65) - 60 + 'px'
         }"
       class="desert-asset">
@@ -116,7 +118,7 @@ export default {
   img {
     height: 70%;
     padding: 0px 10px;
-    @media only screen and (max-width: 560px) {
+    @media only screen and (max-width: $md-bp) {
       height: 40%;
     }
   }
@@ -124,7 +126,7 @@ export default {
     margin-top: 20px;
     width: 25vw;
     height: auto;
-    @media only screen and (max-width: 560px) {
+    @media only screen and (max-width: $md-bp) {
       width: 50vw;
     }
   }
