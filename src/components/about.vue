@@ -11,7 +11,7 @@
        Listen here, buckaroo. You think you have what it takes for the rootin'-est, tootin'-est hackathon in the wild midwest?<br><br>
     </div>
   </div>
-  <div id="red-text-container">
+  <div id="colored-text-container">
     This is our 8th KHE! Whether you're <b>totally new</b> to tech & design or a <b>seasoned pro</b>, come spend a weekend making something great with us!
   </div>
 </div>
@@ -54,9 +54,9 @@ export default {
   @media only screen and (max-width: $lg-bp) {
     flex-flow: column;
   }
-  height: 100%;
+  // height: 100%;
   img {
-    width: 50vw;
+    width: 60vw;
     align-self: center;
   }
   justify-content: space-between;
@@ -72,14 +72,20 @@ export default {
   color: $light-blue;
   @media only screen and (max-width: $lg-bp) {
     margin-left: 0vw;
+    font-size: 20px;
+    line-height: 30px;
   }
 }
-#red-text-container {
+#colored-text-container {
   background: $gold;
+  box-shadow: 10px 10px 0px $red;
   font-size: 24px;
   text-align: left;
   color: $dark-blue;
   padding:  20px 5vw;
-  margin: 0px 10vw;
+  margin: 0px 15vw 100px;
+  @media only screen and (max-width: $lg-bp) {
+    font-size: 18px;
+  }
 }
 </style>

@@ -11,7 +11,7 @@
     </div>
 
     <div id="landing-content-container">
-      <p><b>October 18th - 20th</b></p>
+      <p><b>Late September 2019</b></p>
       <p>Kent State Library</p>
     </div>
 
@@ -33,19 +33,19 @@
 
     <img src="@/assets/landing_assets/midground_1.svg" id="midground-1"
       :style="{
-          'margin-bottom': -(scrollPos / 50) - (mouseY / 45) + 'px',
+          'margin-bottom': -(scrollPos / 30) - (mouseY / 45) + 'px',
           'margin-right': -(mouseX / 65) + 'px'
         }"
       class="desert-asset">
     <img src="@/assets/landing_assets/midground_2.svg" id="midground-2"
       :style="{
-          'margin-bottom': -(scrollPos / 25) - (mouseY / 75) + 'px',
+          'margin-bottom': -(scrollPos / 18) - (mouseY / 75) + 'px',
           'margin-right': -(mouseX / 85) + 'px'
         }"
       class="desert-asset">
     <img src="@/assets/landing_assets/midground_3.svg" id="midground-3"
     :style="{
-          'margin-bottom': -(scrollPos / 15) + 'px',
+          'margin-bottom': -(scrollPos / 13) + 'px',
           'margin-right': (mouseX / 85) - 40 + 'px'
         }"
       class="desert-asset">
