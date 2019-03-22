@@ -9,8 +9,8 @@
         </h2>
         
         <!--Outputs faq objects dynamically, as defined by the 'faqs' object in the data.-->
-        <div class="faqModule" v-for="faq in faqs">
-          <div class="question" @click="expandFAQ(faq.id)">
+        <div class="faqModule" v-for="faq in faqs" @click="expandFAQ(faq.id)">
+          <div class="question" >
             <span v-if="expanded != faq.id">▶ &nbsp;</span>
             <span v-if="expanded == faq.id">▼ &nbsp;</span>
             <span class="qText">{{ faq.question }}</span>

@@ -13,6 +13,10 @@
     <div id="landing-content-container">
       <p><b>Late September 2019</b></p>
       <p>Kent State Library</p>
+      <br>
+      <a class="gold-clear-button" href="https://sponsor.khe.io" target="_blank">
+        Interested in Sponsoring?
+      </a>
     </div>
 
     <!-- Art, absolutely positioned.

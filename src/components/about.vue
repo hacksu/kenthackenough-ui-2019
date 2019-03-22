@@ -78,7 +78,7 @@ export default {
 }
 #colored-text-container {
   background: $gold;
-  box-shadow: 10px 10px 0px $red;
+  box-shadow: 10px 10px 0px $blue;
   font-size: 24px;
   text-align: left;
   color: $dark-blue;

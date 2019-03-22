@@ -44,4 +44,20 @@ h1 {
     display: none;
   }
 }
+
+.gold-clear-button {
+  font-family: athelas;
+  background: none;
+  color: $gold;
+  border: solid $gold 1px;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  transition-duration: .5s;
+  cursor: pointer;
+  &:hover {
+    color: $dark-blue;
+    background: $gold;
+  }
+}
 </style>
