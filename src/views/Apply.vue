@@ -1,7 +1,10 @@
 <template>
   <div id="application" ref="application" @keyup.enter="next()">
     <div id="app-header">
-      <h3>KHE Application</h3>
+      <img src="@/assets/goldflourish.png" class="flipped"> 
+          <!-- Note we're flipping this with CSS  so we don't have to load an extra asset! -->
+      <img src="@/assets/goldshortlogo.png">
+      <img src="@/assets/goldflourish.png" class="desktop-only">
     </div>
 
     <div id="questionHolder"
@@ -129,21 +132,21 @@
         
       </div>
       <div class="nav-buttons">
-        <button @click="previous()" class="spooky-button"
+        <button @click="previous()" class="fancy-button"
                 v-if="currentQuestion != 0">
-          Previous
+          ← Back
         </button>
         <button style="opacity: 0" v-else></button>
-        <button @click="next()" class="spooky-button"
+        <button @click="next()" class="fancy-button"
                 v-if="currentQuestion < appQuestions.length - 1"
                 :class="{
                         disabled: !valid(currentQuestion)
                         }">
             
-          Next
+          Next →
           <p>or press Enter</p>
         </button>
-        <button @click="submit()" v-else class="spooky-button"
+        <button @click="submit()" v-else class="fancy-button"
                 :class="{
                        disabled: !valid(currentQuestion)
                        }">
@@ -158,7 +161,7 @@
       <h1>Thanks!</h1>
       <p>Your application was submitted! Nice!</p>
       <p>We'll send confirmation to your email soon. Get pumped!</p>
-      <router-link tag="button" class="spooky-button"
+      <router-link tag="button" class="fancy-button"
                    to="/">
         Back to Home!
       </router-link>
@@ -182,7 +185,8 @@ export default {
   name: 'apply',
   
   components: {
-    vueDropzone: vue2Dropzone
+    vueDropzone: vue2Dropzone,
+    VueTelInput
   },
   
   data() {
@@ -227,7 +231,7 @@ export default {
           
           type: 'text',
           label: 'Full Name: ',
-          placeholder: 'John Doe',
+          placeholder: 'Jane Doe',
           
           required: true
         },
@@ -324,8 +328,9 @@ export default {
           label: 'What\'s your gender?',
           
           options: [
-            ['Male', 'Male'],
             ['Female', 'Female'],
+            ['Male', 'Male'],
+            ['Other', 'Other'],
             ['Prefer Not to Say', 'Prefer Not to Say'],
           ],
           // stringInputLabel is optional
@@ -559,30 +564,26 @@ export default {
     color: white;
     display: flex;
     flex-direction: column;
-    background: $blue;
+    background: $dark-blue;
     height: 100vh;
   }
   
   #app-header {
     text-align: left;
-    padding-left: 15%;
     margin-top: 0px;
-    padding-top: 10px;
+    padding-top: 50px;
     left: 0px;
     min-height: 100px;
     color: black;
     font-size: 20px;
     // width: 100%;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
 /*    background: var(--orange);*/
-    background: repeating-linear-gradient(
-  45deg,
-  var(--orange),
-  var(--orange) 50px,
-  var(--pink) 50px,
-  var(--pink) 100px
-);
-    box-shadow: 0px 10px 10px black;
+    img {
+      height: 60px;
+    }
     z-index: 99;
   }
   #questionHolder {

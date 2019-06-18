@@ -233,4 +233,19 @@ h1 {
     background: $gold;
   }
 }
+.fancy-button {
+  background: $gold;
+  box-shadow: 5px 5px 0px $blue;
+  cursor: pointer;
+  font-family: athelas;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  p {
+    font-size: 14px;
+    margin: 0px;
+    font-weight: normal;
+  }
+}
 </style>
