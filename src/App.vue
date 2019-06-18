@@ -7,6 +7,7 @@
 <script>
 import { ApiWrapper } from "khe-frontend-lib";
 
+
 import apiConfig from "./config/config";
 export default {
   name: "app",
@@ -15,7 +16,7 @@ export default {
   data() {
     return {
       showLogin: false,
-      showRegister: false,
+      showRegister: true,
       showPasswordReset: false,
       
       hasApp: false,
@@ -227,11 +228,16 @@ h1 {
   font-size: 20px;
   padding: 10px 20px;
   transition-duration: .5s;
+  margin-bottom: 15px;
   cursor: pointer;
   &:hover {
     color: $dark-blue;
     background: $gold;
   }
+}
+.gold-link {
+  color: $gold;
+  font-size: 15px;
 }
 .fancy-button {
   background: $gold;
@@ -247,5 +253,72 @@ h1 {
     margin: 0px;
     font-weight: normal;
   }
+}
+
+
+
+/* AUTH STYLING */
+/*  Putting this here so i don't need to duplicate in  two components*/
+
+
+#auth-title {
+  font-family: nandaka;
+  font-size: 50px;
+  color: $brown;
+  margin: 0px;
+  margin-bottom: -7px;
+  padding-top: 10vh;
+}
+#auth-subtitle {
+  font-size: 20px;
+  // margin-bottom: 10px;
+
+}
+
+.auth-container {
+  position: relative;
+  z-index: 15;
+  padding-top: 10px;
+  background: $brown;
+  width: 50vw;
+  min-width: 300px;
+  color: white;
+  margin-left: 50%;
+  transform: translatex(-50%);
+}
+
+.simple-text-input {
+  font-family: athelas;
+
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  
+}
+
+#auth-ground {
+  background: $sand;
+  width: 100vw;
+  height: 15vh;
+  position: absolute;
+  bottom: 0px;
+  z-index: 5;
+}
+#auth-cactus {
+  height: 50vh;
+  z-index: 10;
+  position: absolute;
+  bottom: 7vh;
+  left: 10vw;
+}
+#auth-rocks {
+  height: 7vh;
+  z-index: 10;
+  position: absolute;
+  bottom: 7vh;
+  left: 26vw;
 }
 </style>

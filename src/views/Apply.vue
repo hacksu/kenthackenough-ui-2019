@@ -27,6 +27,7 @@
         
           <div v-if="question.type == 'phone'">
             <vue-tel-input v-model="$parent.user.application.phone" 
+                  :defaultCountry="'US'"
                   @onInput="onInput"
                            placeholder="5551239876"
                   @keyup.enter="next()"
@@ -330,7 +331,6 @@ export default {
           options: [
             ['Female', 'Female'],
             ['Male', 'Male'],
-            ['Other', 'Other'],
             ['Prefer Not to Say', 'Prefer Not to Say'],
           ],
           // stringInputLabel is optional
@@ -525,12 +525,13 @@ export default {
     },
     
     submit() {
+      console.log("Called submit()")
       if (!this.valid(this.appQuestions.length - 1)) {
         return;
       }
       
       var vm = this;
-      
+      console.warn(this.$parent.user.application);
       this.$parent.wrapper.applicationManager.saveApplication(this.$parent.user.application)
       .then((data) => {
         console.log("Submitted app!")
@@ -576,11 +577,12 @@ export default {
     min-height: 100px;
     color: black;
     font-size: 20px;
-    // width: 100%;
+    
     padding-bottom: 20px;
     display: flex;
     justify-content: space-around;
-/*    background: var(--orange);*/
+    // background: black;
+
     img {
       height: 60px;
     }

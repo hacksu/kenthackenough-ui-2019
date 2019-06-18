@@ -11,10 +11,14 @@
     </div>
 
     <div id="landing-content-container">
-      <p><b>Late September 2019</b></p>
+      <p><b>September 27<sup>th</sup>-29<sup>th</sup> 2019</b></p>
       <p>Kent State Library</p>
       <br>
-      <a class="gold-clear-button" href="https://sponsor.khe.io" target="_blank">
+      <router-link tag="button" :to="{name: 'register'}" class="gold-clear-button">
+        Register Now!
+      </router-link>
+      <br>
+      <a class="gold-link" href="https://sponsor.khe.io" target="_blank">
         Interested in Sponsoring?
       </a>
     </div>
@@ -210,5 +214,9 @@ export default {
     to {
       opacity: 1;
     }
+  }
+
+  sup {
+    font-size: 14px;
   }
 </style>
