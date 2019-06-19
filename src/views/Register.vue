@@ -35,7 +35,9 @@
         Register!
       </button>
       <br>
+      <p v-if="err">There was a problem with your registration. Try logging in instead!</p>
       <br>
+
 
       <router-link tag="span" to="/login" class="buttonInput">
         Have an account? Log in!
@@ -56,7 +58,9 @@ export default {
     return {
       password: '',
       passwordConfirm: '',
-      email: ''
+      email: '',
+      
+      err: false,
     };
   },
   mounted() {
@@ -75,9 +79,11 @@ export default {
             this.$parent.user.email = data.email;
             this.$parent.user.role = data.role;
             this.$parent.showRegister = false;
+            this.$router.push('/apply');
           })
           .catch((err) => {
             // TODO: Sign up Failed.
+            this.err = true;
             throw err;
           });
       } else {

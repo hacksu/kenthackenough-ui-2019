@@ -1,11 +1,11 @@
 <template>
   <div id="application" ref="application" @keyup.enter="next()">
-    <div id="app-header">
+    <router-link tag="div" to="/" id="app-header">
       <img src="@/assets/goldflourish.png" class="flipped"> 
           <!-- Note we're flipping this with CSS  so we don't have to load an extra asset! -->
-      <img src="@/assets/goldshortlogo.png">
+      <img src="@/assets/goldshortlogo.png" class="logo">
       <img src="@/assets/goldflourish.png" class="desktop-only">
-    </div>
+    </router-link>
 
     <div id="questionHolder"
           v-on:submit.prevent
@@ -167,6 +167,8 @@
         Back to Home!
       </router-link>
     </div>
+    <div id="apply-ground"></div>
+    <img src="@/assets/apply_assets/dark_cactus.png" id="apply-cactus">
   </div>
 </template>
 
@@ -587,6 +589,12 @@ export default {
       height: 60px;
     }
     z-index: 99;
+
+    @media only screen and (max-width: 600px) {
+      img:not(.logo) {
+        display: none;
+      }
+    }
   }
   #questionHolder {
     margin-left: 15%;
@@ -594,6 +602,7 @@ export default {
     padding-top: 100px;
     margin-bottom: 200px;
     z-index: 50;
+    position: relative;
     font-size: 20px;
   }
   .question {
@@ -693,7 +702,23 @@ export default {
   z-index: 1001 !important;
   color: black;
 }
-  .orange-link {
-    color: orange !important;
-  }
+.orange-link {
+  color: orange !important;
+}
+
+#apply-ground {
+  background: #241B2A;
+  width: 100vw;
+  height: 12vh;
+  position: absolute;
+  bottom: 0px;
+  z-index:  10;
+}
+#apply-cactus {
+  position: absolute;
+  height: 50vh;
+  bottom: 10vh;
+  left: 10vw;
+  z-index: 11;
+}
 </style>

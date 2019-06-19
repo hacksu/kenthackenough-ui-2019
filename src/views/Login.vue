@@ -61,9 +61,10 @@ export default {
         this.$parent.user.email = data.email;
         this.$parent.user.role = data.role;
         this.$parent.showLogin = false;
+        this.$router.push('/');
       })
       .catch((err) => {
-          this.error='Your email or password is incorrect';
+          this.error='Your email or password is incorrect!';
       });
     }
   }
