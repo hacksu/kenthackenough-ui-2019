@@ -527,11 +527,12 @@ export default {
     },
     
     submit() {
-      console.log("Called submit()")
       if (!this.valid(this.appQuestions.length - 1)) {
         return;
       }
-      
+      let phone = this.$parent.user.application.phone.split(' ');
+      this.$parent.user.application.phone = phone[1] + phone[2] + phone[3];
+
       var vm = this;
       console.warn(this.$parent.user.application);
       this.$parent.wrapper.applicationManager.saveApplication(this.$parent.user.application)
