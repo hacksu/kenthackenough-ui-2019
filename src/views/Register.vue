@@ -59,6 +59,11 @@ export default {
       email: ''
     };
   },
+  mounted() {
+    if (this.$parent.user._id) {
+      this.$router.push('/');
+    }
+  },
   methods: {
     register() {
       // Verify that both passwords match

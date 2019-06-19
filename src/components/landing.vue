@@ -1,6 +1,9 @@
 <template>
   <div id="landing-container">
 
+    <div id="logout" v-if="$parent.$parent.user._id" @click="logout()">
+      Log Out
+    </div>
     <div id="logo-container">
       <img src="@/assets/goldflourish.png" class="flipped"> 
           <!-- Note we're flipping this with CSS  so we don't have to load an extra asset! -->
@@ -14,8 +17,13 @@
       <p><b>September 27<sup>th</sup>-29<sup>th</sup> 2019</b></p>
       <p>Kent State Library</p>
       <br>
-      <router-link tag="button" :to="{name: 'register'}" class="gold-clear-button">
+      <router-link tag="button" :to="{name: 'register'}" class="gold-clear-button"
+        v-if="$parent.$parent.user._id == ''">
         Register Now!
+      </router-link>
+      <router-link tag="button" :to="{name: 'apply'}" class="gold-clear-button"
+        v-else>
+        Apply now!
       </router-link>
       <br>
       <a class="gold-link" href="https://sponsor.khe.io" target="_blank">
@@ -98,7 +106,18 @@ export default {
     handleMouseMove(e) {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
-    }
+    },
+    logout: function() {
+      console.log(this.$parent.$parent.wrapper)
+      this.$parent.$parent.wrapper.userManager.logout();
+      //        .then(() => {
+      //        console.log("Logged out!");
+      //      }).catch((err) => {
+      //        console.error("Error logging out: ", err);
+      //      })
+      this.$parent.$parent.user = this.$parent.$parent.userInitialState();
+      this.$router.push({ path: "/" });
+    },
   }
 }
 </script>
@@ -170,7 +189,7 @@ export default {
   z-index: 9;
   width: 13%;
   bottom: 22vw;
-  left: 25%;
+  left: 23%;
   /* Using this media selector to make sure the cowboy stays on the cliff, even with it's max-width */
   @media only screen and (min-width: 1150px) {
     bottom: 260px;
@@ -219,4 +238,16 @@ export default {
   sup {
     font-size: 14px;
   }
+
+#logout {
+  color: $gold;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 </style>

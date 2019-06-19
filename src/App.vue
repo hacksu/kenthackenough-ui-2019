@@ -38,6 +38,11 @@ export default {
       this.user._id = user.key;
       this.user.email = user.email;
       this.user.role = user.role;
+
+      // Redirects to home if they're on register 
+      if (this.$route.fullPath == '/register' || this.$route.fullPath == '/login') {
+        this.$router.push('/')
+      }
       
       // Checks if the user has an application
       this.wrapper.applicationManager.getApplication()
