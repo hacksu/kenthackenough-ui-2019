@@ -94,7 +94,6 @@ export default {
     }
   },
   mounted() {
-    console.log("hi")
     this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
     document.onmousemove = this.handleMouseMove;
@@ -108,7 +107,6 @@ export default {
       this.mouseY = e.clientY;
     },
     logout: function() {
-      console.log(this.$parent.$parent.wrapper)
       this.$parent.$parent.wrapper.userManager.logout();
       //        .then(() => {
       //        console.log("Logged out!");
