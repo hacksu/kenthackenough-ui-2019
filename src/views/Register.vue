@@ -74,7 +74,6 @@ export default {
       if (this.password === this.passwordConfirm) {
         this.$parent.wrapper.userManager.createUser(this.email, this.password)
           .then((data) => {
-//            console.log(data);
             this.$parent.user._id = data.key;
             this.$parent.user.email = data.email;
             this.$parent.user.role = data.role;

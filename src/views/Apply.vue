@@ -500,12 +500,10 @@ export default {
     },
     focusElement() {
       setTimeout(() => {
-//        console.log("Called");
         var input =
           document.querySelector('.question input') ||
           document.querySelector(".question-cell.is-selected textarea") ||
           document.querySelector(".question-cell.is-selected select");
-//        console.log("Input: ", input);
         if (input) {
           input.focus();
         }
@@ -513,7 +511,6 @@ export default {
     },
     // For phone number handling
     onInput({ number, isValid, country }) {
-//      console.log(number, isValid, country);
       this.phone.number = number;
       this.phone.isValid = isValid;
       this.phone.country = country && country.name;

@@ -1,12 +1,16 @@
 <template>
   <div id="landing-container">
-
+    <a id="mlh-trust-badge" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
+      <img id="banner" src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg" alt="Major League Hacking 2020 Hackathon Season">
+    </a>
+    
     <div id="logout" v-if="$parent.$parent.user._id" @click="logout()">
       Log Out
     </div>
+
     <div id="logo-container">
       <img src="@/assets/goldflourish.png" class="flipped"> 
-          <!-- Note we're flipping this with CSS  so we don't have to load an extra asset! -->
+          <!-- Note we're flipping this with CSS so we don't have to load an extra asset! -->
       <img src="@/assets/goldshortlogo.png">
       <img src="@/assets/goldflourish.png" class="desktop-only">
       <br>
@@ -78,7 +82,6 @@
           'margin-right': (mouseX / 65) - 60 + 'px'
         }"
       class="desert-asset">
-
   </div>
 </template>
 
@@ -94,7 +97,6 @@ export default {
     }
   },
   mounted() {
-    console.log("hi")
     this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
     document.onmousemove = this.handleMouseMove;
@@ -108,7 +110,6 @@ export default {
       this.mouseY = e.clientY;
     },
     logout: function() {
-      console.log(this.$parent.$parent.wrapper)
       this.$parent.$parent.wrapper.userManager.logout();
       //        .then(() => {
       //        console.log("Logged out!");
@@ -169,6 +170,21 @@ export default {
   p {
     margin: 10px;
   }
+}
+
+#mlh-trust-badge {
+  display: block;
+  max-width: 100px;
+  min-width: 60px;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 10%;
+  z-index: 10000;
+}
+
+#banner {
+  width: 100%
 }
 
 .desert-asset {
