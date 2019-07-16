@@ -71,10 +71,11 @@
                class="gray-subtitle">
               TL;DR. Be respectful. Harassment and abuse are never tolerated. 
             </span>
-            <span v-if="question.appField == 'demographic'"
-                  class="gray-subtitle">
-              We use this to try to be more inclusive & accomadating in the future.
+
+            <span v-if="question.appField == 'demographic'" class="gray-subtitle">
+              I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy. I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy.
             </span>
+
             <input class="hidden question" 
                    v-model="boolInput"
                    @keyup.enter="next()"
@@ -692,6 +693,7 @@ export default {
     opacity: .5;
     font-style: italic;
     font-size: 12px;
+    text-align: left;
   }
 </style>
 
