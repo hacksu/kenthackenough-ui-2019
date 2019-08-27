@@ -4,6 +4,7 @@
     <h4 id="auth-title">Login</h4>
     <div class="auth-container">
       <h6 id="auth-subtitle">I've seen you 'round these parts.</h6>
+      <div id="error-message"> {{ error }}</div>
       Email:<br>
       <input id="login-username" 
             class="simple-text-input"
@@ -46,7 +47,8 @@ export default {
   data() {
     return {
       password: '',
-      email: ''
+      email: '',
+      error: ''
     };
   },
   methods: {
@@ -55,7 +57,6 @@ export default {
       this.err = '';
       this.$parent.wrapper.userManager.login(this.email, this.password)
       .then((data) => {
-        
         this.$parent.user._id = data.key;
         this.$parent.user.email = data.email;
         this.$parent.user.role = data.role;
@@ -63,7 +64,7 @@ export default {
         this.$router.push('/');
       })
       .catch((err) => {
-          this.error='Your email or password is incorrect!';
+        this.error='Your email or password is incorrect!';
       });
     }
   }
@@ -71,13 +72,14 @@ export default {
 </script>
 
 <style scoped lang="scss">  
-@import '@/globalVars.scss';
+  @import '@/globalVars.scss';
 
-#login {
-  background: $light-blue;
-  height: 100vh;
-  width: 100vw;
-}
+  #login {
+    background: $light-blue;
+    height: 100vh;
+    width: 100vw;
+  }
+
   .vines {
     box-sizing: border-box;
     border: 30px solid rgba(0,0,0,0.5);
@@ -98,15 +100,20 @@ export default {
   .buttonInput {
     transition-duration: .5s;
     height: 30px;
-    
     padding-right: 10px;
     padding-left: 10px;
     outline: none;
     border: none;
     cursor: pointer;
   }
+
   #dialog {
     padding-bottom: 25px;
   }
 
+  #error-message{
+    font-size: 15px;
+    color: red;
+    padding-bottom: 15px; 
+  }
 </style>
