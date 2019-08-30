@@ -25,7 +25,7 @@
       
     },
     mounted() {
-      this.$parent.$parent.wrapper.sponsorSource.getSponsors()
+      this.$parent.wrapper.sponsorSource.getSponsors()
         .then((data) => {
           this.sponsors = data;
           console.log("SPONSORS", this.sponsors)

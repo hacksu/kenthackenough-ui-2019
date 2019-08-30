@@ -1,14 +1,39 @@
 <template>
   <div id="app">
+    <div id="banner">
+      <div id="bannerL" class="bannerContainer">
+        <p class="banner-link khe-link" id="kheTitle"
+           @click="scrollTo('/', '#mainContainer')">KENT HACK ENOUGH</p>
+        
+        <div id="hamburgMenu">
+          <img id="hamburgIcon" src="@/assets/Hamburger_icon.svg.png" width="50" @click="togMenu()">
+        </div>
+      </div>
+      
+      <div id="bannerR" class="bannerContainer" :class="{'hidden': expandMenu}">
+        <p class="banner-link green" @click="scrollTo('/', 'landing-container')">Home</p>
+        <!-- <p class="banner-link pink"@click="scrollTo('/', '#about-container')">About</p> -->
+        <p class="banner-link green" @click="scrollTo('/', '#faq-container')">FAQ</p>
+        <p class="banner-link blue" @click="scrollTo('/sponsor', '#sponsors')">Sponsors</p>
+        <!-- <p class="banner-link yellow" @click="navTo('/contact')">Contact</p> -->
+        <!-- <p class="banner-link pink" @click="navTo('/schedule')">Schedule</p> -->
+        <!-- <p class="banner-link green" @click="scrollTo('/', '#map')">Map</p> -->
+        <p class="banner-link blue" @click="scrollTo('/register', '#register')" v-if="user._id == ''">Register/Login</p>
+        <p class="banner-link blue" @click='logout()' v-if="user._id != ''">Log out</p>
+        <!-- <p class="banner-link yellow" @click="navTo('/live')">Live!</p> @click="scrollTo('/', '#faq-container')"-->
+        <div class="padding" style="width: 50px"></div>
+      </div>
+    </div>
     <router-view/>
   </div>
 </template>
 
 <script>
 import { ApiWrapper } from "khe-frontend-lib";
-
+import scrollto from "vue-scrollto";
 
 import apiConfig from "./config/config";
+
 export default {
   name: "app",
   components: {
@@ -178,151 +203,240 @@ export default {
       this.user = this.userInitialState();
       this.$router.push({ path: "/" });
     },
+    togMenu: function() {
+      this.expandMenu = !this.expandMenu;
+    },
+    scrollTo: function(page, el) {
+      this.expandMenu = false;
+      if (this.$route.path !== page) {
+        this.$router.push(page);
+        this.scrollToEl = el;
+      } else {
+        scrollto.scrollTo(el, 300);
+      }
+    }
   }
 };
 </script>
 
 <style lang="scss">
-@import '@/globalVars.scss';
+  @import '@/globalVars.scss';
 
-
-@font-face {
-  font-family: nandaka;
-  src: url("./assets/fonts/nandaka_western.ttf");
-}
-@font-face {
-  font-family: athelas;
-  src: url("./assets/fonts/Athelas-Regular.ttf");
-}
-
-h1 {
-  font-family: nandaka;
-  color: $gold;
-  font-size: 40px;
-}
-
-
-#app {
-  font-family: athelas;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  position: absolute;
-  width: 100%;
-  top: 0px;
-  left: 0px;
-
-}
-.flipped {
-  transform: scaleX(-1);
-}
-.desktop-only {
-  @media only screen and (max-width: 560px) {
+  #hamburgMenu {
     display: none;
   }
-}
 
-.gold-clear-button {
-  font-family: athelas;
-  background: none;
-  color: $gold;
-  border: solid $gold 1px;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition-duration: .5s;
-  margin-bottom: 15px;
-  cursor: pointer;
-  &:hover {
-    color: $dark-blue;
-    background: $gold;
+  @font-face {
+    font-family: nandaka;
+    src: url("./assets/fonts/nandaka_western.ttf");
   }
-}
-.gold-link {
-  color: $gold;
-  font-size: 15px;
-}
-.fancy-button {
-  background: $gold;
-  box-shadow: 5px 5px 0px $blue;
-  cursor: pointer;
-  font-family: athelas;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 10px 20px;
-  border: none;
-  p {
-    font-size: 14px;
+
+  @font-face {
+    font-family: athelas;
+    src: url("./assets/fonts/Athelas-Regular.ttf");
+  }
+
+  h1 {
+    font-family: nandaka;
+    color: $gold;
+    font-size: 40px;
+  }
+
+  #app {
+    font-family: athelas;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+
+  #banner {
+    /*position: fixed;*/
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: space-between;
+    z-index: 98;
+  }
+
+  .banner-link {
+    padding: 15px;
     margin: 0px;
-    font-weight: normal;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
-}
 
+  .banner-link:hover {
+    background-color: $blue;
+  }
 
+  .bannerContainer {
+    display: flex;
+  }
 
-/* AUTH STYLING */
-/*  Putting this here so i don't need to duplicate in  two components*/
+  .bannerContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 
+  .flipped {
+    transform: scaleX(-1);
+  }
 
-#auth-title {
-  font-family: nandaka;
-  font-size: 50px;
-  color: $brown;
-  margin: 0px;
-  margin-bottom: -7px;
-  padding-top: 10vh;
-}
-#auth-subtitle {
-  font-size: 20px;
-  // margin-bottom: 10px;
+  .desktop-only {
+    @media only screen and (max-width: 560px) {
+      display: none;
+    }
+  }
 
-}
+  .gold-clear-button {
+    font-family: athelas;
+    background: none;
+    color: $gold;
+    border: solid $gold 1px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition-duration: .5s;
+    margin-bottom: 15px;
+    cursor: pointer;
+    &:hover {
+      color: $dark-blue;
+      background: $gold;
+    }
+  }
 
-.auth-container {
-  position: relative;
-  z-index: 15;
-  padding-top: 10px;
-  background: $brown;
-  width: 50vw;
-  min-width: 300px;
-  color: white;
-  margin-left: 50%;
-  transform: translatex(-50%);
-}
+  .gold-link {
+    color: $gold;
+    font-size: 15px;
+  }
 
-.simple-text-input {
-  font-family: athelas;
+  .fancy-button {
+    background: $gold;
+    box-shadow: 5px 5px 0px $blue;
+    cursor: pointer;
+    font-family: athelas;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
 
-  background: none;
-  border: none;
-  border-bottom: 2px solid white;
-  color: white;
-  font-size: 16px;
-  margin-bottom: 20px;
-  
-}
+    p {
+      font-size: 14px;
+      margin: 0px;
+      font-weight: normal;
+    }
+  }
 
-#auth-ground {
-  background: $sand;
-  width: 100vw;
-  height: 15vh;
-  position: absolute;
-  bottom: 0px;
-  z-index: 5;
-}
-#auth-cactus {
-  height: 50vh;
-  z-index: 10;
-  position: absolute;
-  bottom: 7vh;
-  left: 10vw;
-}
-#auth-rocks {
-  height: 7vh;
-  z-index: 10;
-  position: absolute;
-  bottom: 7vh;
-  left: 26vw;
-}
+  /* AUTH STYLING */
+  /*  Putting this here so i don't need to duplicate in  two components*/
+
+  #auth-title {
+    font-family: nandaka;
+    font-size: 50px;
+    color: $brown;
+    margin: 0px;
+    margin-bottom: -7px;
+    padding-top: 10vh;
+  }
+
+  #auth-subtitle {
+    font-size: 20px;
+    // margin-bottom: 10px;
+  }
+
+  .auth-container {
+    position: relative;
+    z-index: 15;
+    padding-top: 10px;
+    background: $brown;
+    width: 50vw;
+    min-width: 300px;
+    color: white;
+    margin-left: 50%;
+    transform: translatex(-50%);
+  }
+
+  .simple-text-input {
+    font-family: athelas;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  #auth-ground {
+    background: $sand;
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    bottom: 0px;
+    z-index: 5;
+  }
+
+  #auth-cactus {
+    height: 50vh;
+    z-index: 10;
+    position: absolute;
+    bottom: 7vh;
+    left: 10vw;
+  }
+
+  #auth-rocks {
+    height: 7vh;
+    z-index: 10;
+    position: absolute;
+    bottom: 7vh;
+    left: 26vw;
+  }
+
+  @media only screen and (max-width: 850px) {
+    #bannerL {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #bannerR {
+      flex-direction: column;
+    }
+
+    #bannerR:not(.hidden) {
+      display: none;
+    }
+
+    #banner {
+      flex-direction: column;
+    }
+
+    #hamburgMenu {
+      display: block;
+      cursor: pointer;
+    }
+
+    #hamburgIcon {
+      filter: invert(100%);
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+    }
+
+    #bannerLMobile {
+      display: block;
+    }
+
+    .banner-link {
+      margin-bottom: 0px;
+      padding-bottom: 10px;
+      text-align: left;
+    }
+  }
 </style>

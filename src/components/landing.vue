@@ -1,15 +1,11 @@
 <template>
   <div id="landing-container">
     <a id="mlh-trust-badge" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
-      <img id="banner" src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg" alt="Major League Hacking 2020 Hackathon Season">
+      <img id="mlh-banner" src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg" alt="Major League Hacking 2020 Hackathon Season">
     </a>
-    
-    <div id="logout" v-if="$parent.$parent.user._id" @click="logout()">
-      Log Out
-    </div>
 
     <div id="logo-container">
-      <img src="@/assets/goldflourish.png" class="flipped"> 
+      <img src="@/assets/goldflourish.png" class="flipped desktop-only"> 
           <!-- Note we're flipping this with CSS so we don't have to load an extra asset! -->
       <img src="@/assets/goldshortlogo.png">
       <img src="@/assets/goldflourish.png" class="desktop-only">
@@ -127,7 +123,6 @@ export default {
 @import '@/globalVars.scss';
 
 #landing-container {
-  
   min-height: 100vh;
   overflow: hidden;
   padding: 0px;
@@ -140,14 +135,13 @@ export default {
 }
 
 #logo-container {
-
   height: 130px;
   margin-top: 100px;
   img {
     height: 70%;
     padding: 0px 10px;
     @media only screen and (max-width: $md-bp) {
-      height: 40%;
+      height: 80%;
     }
   }
   #short-logo {
@@ -177,19 +171,20 @@ export default {
   max-width: 100px;
   min-width: 60px;
   position: absolute;
-  left: 50px;
+  left: 5px;
   top: 0;
   width: 10%;
   z-index: 10000;
 }
 
-#banner {
+#mlh-banner {
   width: 100%
 }
 
 .desert-asset {
   position: absolute;
 }
+
 /* Note that for all positioning, we need to use 'vw' as our unit 
           -- even vertical positioning!!
         This way the assets will scale with the screen width, for mobile phones. */
@@ -201,6 +196,7 @@ export default {
   left: 0px;
   z-index: 10;
 }
+
 #cowboy {
   z-index: 9;
   width: 13%;
@@ -219,41 +215,45 @@ export default {
   z-index: 9;
   width: 85%;
 }
+
 #midground-2 {
   right: -30px;
   bottom: -1vw;
   z-index: 8;
   width: 85%;
 }
+
 #midground-3 {
   right: 0px;
   bottom: -6vw;
   z-index: 7;
 }
+
 #mesa {
   width: 30%;
   bottom: 8vw;
   right: 10%;
   z-index: 6;
 }
+
 #mountains {
   width: 120%;
   right: -170px;
   bottom: -16vw;
 }
   
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  sup {
-    font-size: 14px;
-  }
+sup {
+  font-size: 14px;
+}
 
 #logout {
   color: $gold;
@@ -264,6 +264,12 @@ export default {
   cursor: pointer;
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #mlh-trust-badge {
+    left: 50px;
   }
 }
 </style>
