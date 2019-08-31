@@ -14,17 +14,17 @@
       </div>
     </div>
     
-    <!--<div id="powered-by">
+    <div id="powered-by">
       <p id="powered-by-text">Powered By</p>
 
-      <a id="small-hacksu-logo" href="http://hacksu.cs.kent.edu">
-        <img id="powered-by-hacksu" src="../../assets/2018-hacksu-color.svg">
+      <a id="small-hacksu-logo" href="http://hacksu.com">
+        <img id="powered-by-hacksu" src="@/assets/2019-hacksu-color.svg">
       </a>
 
       <a id="small-mlh-logo" href="https://mlh.io">
-        <img id="powered-by-mlh" src="../../assets/mlh-logo.svg">
+        <img id="powered-by-mlh" src="@/assets/mlh-logo.svg">
       </a>
-    </div>-->
+    </div>
   </div>
 </template>
 
@@ -32,7 +32,8 @@
   @import '@/globalVars.scss';
 
   #powered-by-text {
-    color: #FF7E58;
+    color: $brown;
+    font-weight: bold;
     font-family: "Oswald", sans-serif;
     text-align: center;
     font-size: 20px;
@@ -120,11 +121,12 @@
       width: 100%;
       min-height: 50px;
       padding-left: 50px;
+      background-color: $blue;
     }
 
     #powered-by-text {
       font-size: 18px;
-      padding-top: 15px;
+      margin: auto 0;
     }
 
     #powered-by-hacksu {
