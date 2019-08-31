@@ -11,16 +11,16 @@
       </div>
       
       <div id="bannerR" class="bannerContainer" :class="{'hidden': expandMenu}">
-        <p class="banner-link green" @click="scrollTo('/', 'landing-container')">Home</p>
-        <!-- <p class="banner-link pink"@click="scrollTo('/', '#about-container')">About</p> -->
-        <p class="banner-link green" @click="scrollTo('/', '#faq-container')">FAQ</p>
-        <p class="banner-link blue" @click="scrollTo('/sponsor', '#sponsors')">Sponsors</p>
-        <!-- <p class="banner-link yellow" @click="navTo('/contact')">Contact</p> -->
-        <!-- <p class="banner-link pink" @click="navTo('/schedule')">Schedule</p> -->
-        <!-- <p class="banner-link green" @click="scrollTo('/', '#map')">Map</p> -->
-        <p class="banner-link blue" @click="scrollTo('/register', '#register')" v-if="user._id == ''">Register/Login</p>
-        <p class="banner-link blue" @click='logout()' v-if="user._id != ''">Log out</p>
-        <!-- <p class="banner-link yellow" @click="navTo('/live')">Live!</p> @click="scrollTo('/', '#faq-container')"-->
+        <p class="banner-link" @click="scrollTo('/', 'landing-container')">Home</p>
+        <!-- <p class="banner-link"@click="scrollTo('/', '#about-container')">About</p> -->
+        <p class="banner-link" @click="scrollTo('/', '#faq-container')">FAQ</p>
+        <p class="banner-link" @click="scrollTo('/sponsor', '#sponsors')">Sponsors</p>
+        <!-- <p class="banner-link" @click="navTo('/contact')">Contact</p> -->
+        <!-- <p class="banner-link" @click="navTo('/schedule')">Schedule</p> -->
+        <p class="banner-link" @click="scrollTo('/', '#map')">Map</p>
+        <p class="banner-link" @click="scrollTo('/register', '#register')" v-if="user._id == ''">Register/Login</p>
+        <p class="banner-link" @click='logout()' v-if="user._id != ''">Log out</p>
+        <!-- <p class="banner-link" @click="navTo('/live')">Live!</p> @click="scrollTo('/', '#faq-container')"-->
         <div class="padding" style="width: 50px"></div>
       </div>
     </div>
