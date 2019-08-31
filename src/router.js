@@ -5,6 +5,7 @@ import Apply from './views/Apply.vue'
 import Register from './views/Register.vue'
 import Login from './views/Login.vue'
 import Sponsor from './views/Sponsor.vue'
+import Contact from './views/Contact.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/sponsor',
       name: 'sponsor',
       component: Sponsor
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
     }
   ]
 })

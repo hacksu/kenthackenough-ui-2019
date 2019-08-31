@@ -15,7 +15,7 @@
         <!-- <p class="banner-link"@click="scrollTo('/', '#about-container')">About</p> -->
         <p class="banner-link" @click="scrollTo('/', '#faq-container')">FAQ</p>
         <p class="banner-link" @click="scrollTo('/sponsor', '#sponsors')">Sponsors</p>
-        <!-- <p class="banner-link" @click="navTo('/contact')">Contact</p> -->
+        <p class="banner-link" @click="scrollTo('/contact', '#contact')">Contact</p>
         <!-- <p class="banner-link" @click="navTo('/schedule')">Schedule</p> -->
         <p class="banner-link" @click="scrollTo('/', '#map')">Map</p>
         <p class="banner-link" @click="scrollTo('/register', '#register')" v-if="user._id == ''">Register/Login</p>
