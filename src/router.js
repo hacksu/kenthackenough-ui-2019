@@ -6,6 +6,8 @@ import Register from './views/Register.vue'
 import Login from './views/Login.vue'
 import Sponsor from './views/Sponsor.vue'
 import Contact from './views/Contact.vue'
+import Me from './views/me.vue'
+import Scan from './views/scan.vue'
 
 Vue.use(Router)
 
@@ -42,6 +44,16 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/me',
+      name: 'me',
+      component: Me
+    },
+    {
+      path: '/scan',
+      name: 'scan',
+      component: Scan
     }
   ]
 })

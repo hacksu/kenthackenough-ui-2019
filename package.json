@@ -9,6 +9,7 @@
   "dependencies": {
     "khe-frontend-lib": "git+https://github.com/hacksu/khe-frontend-lib.git",
     "vue": "^2.6.6",
+    "vue-qrcode-reader": "^2.0.4",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.15.0",
     "vue-tel-input": "^2.2.5",
