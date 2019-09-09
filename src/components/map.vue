@@ -118,7 +118,6 @@
     #powered-by {
       display: flex;
       flex-direction: row;
-      width: 100%;
       min-height: 50px;
       padding-left: 50px;
       background-color: $blue;
