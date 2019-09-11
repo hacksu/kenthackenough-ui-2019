@@ -13,13 +13,15 @@ export default {
     components: {
         QrcodeVue
     },
-    mounted() {
-        let user = this.$parent.wrapper.userManager.getLocalUser()
-        if (user != null) {
-            // TODO: user.key is not the correct value. Need to get _id
-            this.uId = user.key
-            console.log("set uId", this.uId)
-        }
+    mounted() { 
+        // TODO: verify logged in
+
+        this.$parent.wrapper.applicationManager.getApplication()
+        .then((app) => {
+            console.log("_id: ", app._id)
+            this.uId = app._id
+        })
+        
     }, 
     data() {
         return {
