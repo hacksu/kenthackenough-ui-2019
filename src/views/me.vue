@@ -2,6 +2,7 @@
     <div>
         <p></p>
         <qrcode-vue :value="uId"></qrcode-vue>
+        {{ uId }}
     </div>
 </template>
 
