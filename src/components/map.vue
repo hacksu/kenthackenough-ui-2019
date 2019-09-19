@@ -10,7 +10,7 @@
             <p>KSU will not be ticketing over the weekend. The two parking lots closest to the library are the Vistor Lot right by the bus stop, and the R lot by Eastway.</p>
         </div>
         
-        <iframe class="split" id="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.4427201307603!2d-81.34461668458171!3d41.14668997928703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88313accb4555555%3A0x3e830cbda94e6469!2sKent+State+University+Library!5e0!3m2!1sen!2sus!4v1510788212698" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe class="split" id="mapIframe" src="https://www.google.com/maps/d/embed?mid=13yeMa_BGkM3Q7XOvwX7K7U2CEcEUwzal" width="600" height="450" frameborder="0" style="border:0"></iframe>
       </div>
     </div>
     
@@ -118,7 +118,6 @@
     #powered-by {
       display: flex;
       flex-direction: row;
-      width: 100%;
       min-height: 50px;
       padding-left: 50px;
       background-color: $blue;
