@@ -1,0 +1,155 @@
+{
+    "fridayEvents": [
+        {
+            "id":"00",
+            "startTime":"5:00 PM",
+            "title":"Attendee Check In Opens",
+            "location":"Library First Floor - Lobby",
+            "description":""
+        },
+        {
+            "id":"01",
+            "startTime":"5:00-7:30 PM",
+            "title":"Sponsor Expo",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"02",
+            "startTime":"7:30 PM",
+            "title":"Opening Ceremony",
+            "location":"Library First Floor - Garden Room",
+            "description":""
+        },
+        {   
+            "id":"03",
+            "startTime":"8:30 PM",
+            "title":"Sponsor Expo",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"04",
+            "startTime":"8:30 PM",
+            "title":"Dinner - Grazers",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"05",
+            "startTime":"9:00 PM",
+            "title":"Hacking Begins",
+            "location":"",
+            "description":""
+        },
+        {
+            "id":"06",
+            "startTime":"9:00 PM",
+            "title":"Team Building Activity",
+            "location":"Library First Floor - Garden Room",
+            "description":""
+        },
+        {
+            "id":"07",
+            "startTime":"9:30 PM",
+            "title":"Hackathon Planning Workshop",
+            "location":"Library First Floor - Garden Room",
+            "description":""
+        }
+    ],
+    "saturdayEvents": [
+        {
+            "id":"10",
+            "startTime":"12:00 AM",
+            "title":"Midnight Snack - Cookies!",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"11",
+            "startTime":"2:00 AM",
+            "title":"Fun Activity - Escape Room Challenge",
+            "location":"Library Fourth Floor",
+            "description":""
+        },
+        {
+            "id":"12",
+            "startTime":"8:00 AM",
+            "title":"Breakfast",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"13",
+            "startTime":"12:00 PM",
+            "title":"Lunch - Fresco's",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"14",
+            "startTime":"7:00 PM",
+            "title":"Dinner - Rocco's",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"15",
+            "startTime":"9:00 PM",
+            "title":"MLH Event",
+            "location":"Library Second Floor",
+            "description":""
+        }
+    ],
+    "sundayEvents": [
+        {
+            "id":"20",
+            "startTime":"12:00 AM",
+            "title":"Midnight Snack - Ice Cream Bar",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"21",
+            "startTime":"2:00 AM",
+            "title":"Fun Activity - Water Pong Tournament",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"22",
+            "startTime":"9:00 AM",
+            "title":"Breakfast",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"23",
+            "startTime":"9:30 AM",
+            "title":"Hacking Ends",
+            "location":"",
+            "description":""
+        },
+        {
+            "id":"24",
+            "startTime":"10:30 AM",
+            "title":"Project Expo",
+            "location":"Student Center Second Floor",
+            "description":""
+        },
+        {
+            "id":"25",
+            "startTime":"12:00 PM",
+            "title":"Lunch - Jimmy John's",
+            "location":"Library Second Floor",
+            "description":""
+        },
+        {
+            "id":"26",
+            "startTime":"1:00 PM",
+            "title":"Closing Ceremony",
+            "location":"Library First Floor - Garden Room",
+            "description":""
+        }
+    ]
+}

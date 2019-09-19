@@ -6,6 +6,7 @@ import Register from './views/Register.vue'
 import Login from './views/Login.vue'
 import Sponsor from './views/Sponsor.vue'
 import Contact from './views/Contact.vue'
+import Schedule from './views/Schedule.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/schedule',
+      name: 'schedule',
+      component: Schedule
     }
   ]
 })

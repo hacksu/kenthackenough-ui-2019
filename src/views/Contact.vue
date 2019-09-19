@@ -1,7 +1,7 @@
 <template>
   <div id="contact" class="widget">
     <div v-if="!submitted">
-      <h2 id="contactTitle">Contact us</h2>
+      <h1 id="contactTitle">Contact us</h1>
       <p>If you have any questions, concerns, or problems, please do not hesitate to contact us. One of our organizers will get back to you as soon as humanly possible.</p>
       
       <div class="formField">
