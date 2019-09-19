@@ -8,6 +8,8 @@
 
 <script>
 import QrcodeVue from 'qrcode.vue'
+import apiConfig from "@/config/config";
+import axios from 'axios'
 
 export default {
     name: 'Me',
@@ -21,8 +23,8 @@ export default {
         .then((app) => {
             console.log("_id: ", app._id)
             this.uId = app._id
+            axios.get(apiConfig.api_base + '/gamify/game_intro/TODO/intro/' + this.uId)
         })
-        
     }, 
     data() {
         return {
