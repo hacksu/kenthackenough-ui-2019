@@ -7,7 +7,7 @@
             <p>Kent Hack Enough is graciously hosted in the Kent State Library, at: </p>
             <p>1125 Risman Dr, Kent, OH 44242</p>
             <h3>Parking</h3>
-            <p>KSU will not be ticketing over the weekend. The two parking lots closest to the library are the Vistor Lot right by the bus stop, and the R lot by Eastway.</p>
+            <p>KSU will not be ticketing over the weekend. The two parking lots closest to the library are the Visitor Lot right by the bus stop, and the R lot by Eastway.</p>
         </div>
         
         <iframe class="split" id="mapIframe" src="https://www.google.com/maps/d/embed?mid=13yeMa_BGkM3Q7XOvwX7K7U2CEcEUwzal" width="600" height="450" frameborder="0" style="border:0"></iframe>
