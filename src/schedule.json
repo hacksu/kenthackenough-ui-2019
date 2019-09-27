@@ -106,6 +106,13 @@
             "title":"MLH Event",
             "location":"Library Second Floor",
             "description":""
+        },
+        {
+            "id":"17",
+            "startTime":"10:00 PM",
+            "title":"Super Smash Bros. Ultimate Tournament",
+            "location":"Library Fourth Floor",
+            "description":""
         }
     ],
     "sundayEvents": [
