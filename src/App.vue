@@ -18,9 +18,9 @@
         <p class="banner-link" @click="scrollTo('/contact', '#contact')">Contact</p>
         <p class="banner-link" @click="scrollTo('/schedule')">Schedule</p>
         <p class="banner-link" @click="scrollTo('/', '#map')">Map</p>
+        <p class="banner-link" @click="scrollTo('/live')">Live!</p>"
         <p class="banner-link" @click="scrollTo('/register', '#register')" v-if="user._id == ''">Register/Login</p>
         <p class="banner-link" @click='logout()' v-if="user._id != ''">Log out</p>
-        <!-- <p class="banner-link" @click="navTo('/live')">Live!</p> @click="scrollTo('/', '#faq-container')"-->
         <div class="padding" style="width: 50px"></div>
       </div>
     </div>

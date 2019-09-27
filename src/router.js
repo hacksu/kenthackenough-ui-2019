@@ -9,6 +9,7 @@ import Contact from './views/Contact.vue'
 import Me from './views/me.vue'
 import Scan from './views/scan.vue'
 import Schedule from './views/Schedule.vue'
+import Live from './views/Live.vue'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/schedule',
       name: 'schedule',
       component: Schedule
+    },
+    {
+      path: '/live',
+      name: 'live',
+      component: Live
     }
   ]
 })
