@@ -81,20 +81,27 @@
         },
         {
             "id":"13",
+            "startTime":"10:00 AM",
+            "title":"Metasploit Workshop by RSM",
+            "location":"Library First Floor - Garden Room",
+            "description":""
+        },
+        {
+            "id":"14",
             "startTime":"12:00 PM",
             "title":"Lunch - Fresco's",
             "location":"Library Second Floor",
             "description":""
         },
         {
-            "id":"14",
+            "id":"15",
             "startTime":"7:00 PM",
             "title":"Dinner - Rocco's",
             "location":"Library Second Floor",
             "description":""
         },
         {
-            "id":"15",
+            "id":"16",
             "startTime":"9:00 PM",
             "title":"MLH Event",
             "location":"Library Second Floor",
